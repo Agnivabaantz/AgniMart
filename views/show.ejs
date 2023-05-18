@@ -1,0 +1,23 @@
+<%- include('partials/head')  %> 
+<h1 class="shopheading"><%= productFetch.name  %></h1>
+<div class="container">
+    <div class="text-center">
+        <img src="<%=productFetch.imageUrl%>" class="img-thumbnail rounded mx-auto d-block" alt="...">
+      </div>
+    <ul>
+        <li><b>Description:</b> <%= productFetch.description  %></li>
+        <li><b>Price</b> = Rupees <%= productFetch.price  %></li>
+        <li><b>Available in Stock</b> <%= productFetch.countInStock%></li>
+        <li><b>Category</b> = <a href="/home/products?category=<%=productFetch.category%>"><%=productFetch.category%></a></li>
+    </ul>
+    <a href="/home/products/" class="btn btn-dark">All Products Page</a> 
+    <a href="/home/products/<%=productFetch._id%>/buy" class="btn btn-dark">Buy Item</a>
+</div>
+        <form action="/home" method="get" id="homeForm">
+            <div class="row form-floating">
+                <button class="btn btn-primary" id="home">Back to Home</button>
+            </div>
+        </form>
+</div>
+</body>
+</html>

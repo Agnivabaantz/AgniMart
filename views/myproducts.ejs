@@ -1,0 +1,43 @@
+<%- include('partials/head')  %>
+<div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+            <table class="table table-primary table-striped table-hover" id="myproducts">
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Available Stock</th>
+                    <th>Category</th>
+                </tr>
+                <% for(let item of products){ %>
+                    <tr>
+                        <td><%= item._id%></td>
+                        <td><%= item.name%></td>
+                        <td><%= item.price%></td>
+                        <td><%= item.countInStock%></td>
+                        <td><%= item.category%></td>
+                    </tr>
+                <% } %>
+            </table>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/home/myproducts/new" class="btn btn-dark">Enlist New Product</a>
+        </div>
+        <div class="col">
+            <a href="/home/myproducts/update" class="btn btn-dark">Update Products</a>
+        </div>
+    </div>
+    <div class="row">
+        <form action="/home" method="get" id="homeForm">
+            <div class="row form-floating">
+                <button class="btn btn-primary" id="home">Back to Home</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

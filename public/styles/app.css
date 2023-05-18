@@ -1,0 +1,107 @@
+body{
+    width: 100%;
+    height: 100%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    /*background-color: #a8dadc;*/
+    background: linear-gradient(70deg,#a8dadc, #457b9d);
+    box-shadow: 10px 5px 5px grey;
+}
+.form-elements{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-items: center;
+    text-decoration: solid;
+    justify-content: center;
+    background: linear-gradient(70deg,#457B9D, #1D3557);
+    padding: 2rem;
+    border-radius: 10%;
+    box-shadow: 10px 5px 5px grey;
+}
+div.form-floating{
+    padding: 0.4rem;
+}
+table{
+    margin-top: 4%; 
+}
+.card{
+    margin: 1rem;
+}
+.logo-container{
+    padding: 0.6rem 0 0.4rem 0.8rem;
+}
+.head-container{
+    align-items: center;
+}
+.tagline{
+    color: #1d3557;
+}
+.profile-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+}
+.profile-container a{
+    text-decoration: none;
+    font: 1rem "Roboto", sans-serif;
+    color: #1d3557;
+}
+ul{
+    list-style-type: none;
+}
+.profile-container ul{
+    list-style: none;
+    font: 1.2rem "Roboto", sans-serif;
+    font-weight: 400;
+}
+.profile-container ul li{
+    display: inline-block;
+    padding: 0 0.5rem;
+    min-width: 3rem;
+    text-align: center;
+}
+nav{
+    box-shadow: 10px 5px 5px grey;
+}
+section div.container, footer div.container-lg{
+    padding-top: 1rem;
+}
+footer{
+    font-size: x-small;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;   /* Height of the footer */
+    background: #f1faee;
+    box-shadow: 0 -5px 8px #c3c7c2;
+}
+/* input:invalid:required {
+    border: 2px dashed red;
+  }
+  */
+.heading{
+    text-align: center;
+}
+.form-billing{
+    background: #f1faee;
+}
+.statinfo{
+    text-align: center;
+}
+.gridwrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+h1.shopheading{
+    background-image: radial-gradient(ellipse, #553c9a, #ee4b2b);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+  

@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(70deg, #457b9d, #1d3557);
+}
+div.form-elements{
+    display: flex;
+    margin-top: 6%;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1faee;
+    padding: 2rem;
+    border-radius: 5%;
+    box-shadow: 10px 5px 5px #1d3557;
+}
+form div.row{
+    padding: 1rem;
+}

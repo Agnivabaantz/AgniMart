@@ -1,0 +1,14 @@
+<%- include('partials/head')  %>
+<h1 class="shopheading">Welcome to the Billing Section</h1> 
+    <div class="container">
+        <div class="alert alert-success" role="alert">
+            Your order has been placed for item <%=productFetch._id %>
+        </div>
+        <form action="/home" method="get" id="homeForm">
+            <div class="row form-floating">
+                <button class="btn btn-primary" id="home">Back to Home</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

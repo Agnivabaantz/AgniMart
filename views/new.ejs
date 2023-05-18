@@ -1,0 +1,61 @@
+<%- include('partials/head')  %>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-primary table-striped table-hover" id="myproducts">
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Available Stock</th>
+                        <th>Category</th>
+                    </tr>
+                    <% for(let item of products){ %>
+                        <tr>
+                            <td><%= item._id%></td>
+                            <td><%= item.name%></td>
+                            <td><%= item.price%></td>
+                            <td><%= item.countInStock%></td>
+                            <td><%= item.category%></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            <div class="col">
+                <form class = "form-elements" action="/home/myproducts/new" method="post" id="addItemsForm">
+                    <div class="form-floating">
+                        <input class="form-control" type="text" name = "name" id="name" placeholder="item-name" required>
+                        <label for="name">Enter Product Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" type="number" name = "countInStock" id="countInStock" placeholder="item-quantity" required>
+                        <label for="qty">Enter Stocks</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" type="number" name = "price" id="price" placeholder="item-price" required>
+                        <label for="price">Enter Price</label>
+                    </div>
+                    <div class="form-floating">
+                        <input class="form-control" type="text" name = "category" id="category" placeholder="item-category" required>
+                        <label for="category">Enter Category</label>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="product-description" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Product Description</label>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-dark" id="submit">Enlist Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <form action="/home" method="get" id="homeForm">
+            <div class="row">
+                <button class="btn btn-primary" id="home">Back to Home</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/scripts/add_items.js"></script>
+</body>
+</html>

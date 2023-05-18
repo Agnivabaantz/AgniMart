@@ -1,0 +1,41 @@
+<%- include('partials/head')  %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<h1 class="shopheading">User Details</h1>
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-bg-primary">
+              Account Details
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><span class="badge text-bg-primary">User ID</span><br><%=user._id %></li>
+              <li class="list-group-item"><span class="badge text-bg-primary">User Account Name</span><br><%=user.username  %></li>
+              <li class="list-group-item"><span class="badge text-bg-primary">Name</span><br><%=user.name %></li>
+              <li class="list-group-item"><span class="badge text-bg-primary">Email</span><br><%=user.email %></li>
+            </ul>
+          </div>
+    </div>
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-bg-primary">
+                Enlisted Items
+            </div>
+            <ul class="list-group list-group-flush">
+                <% for(let i of products){ %>   
+                    <li class="list-group-item">
+                        <h3><%=i.name  %></h3>
+                        <div><span class="badge text-bg-success">In Stock </span> <%=i.countInStock %></div>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+    <form action="/home" method="get" id="homeForm">
+        <div class="row form-floating">
+            <button class="btn btn-primary" id="home">Back to Home</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%- include('partials/head')  %> 
+<div class="container">
+    <div class="row"><h1>Registration Page</h1></div>
+    <div class="row">
+        <form class="form-elements" action="/register" method="post" id="addAccount">
+            <div class="row form-floating">
+                <input class="form-control" type="text" name = "name" id="name" placeholder="name" required>
+                <label for="name">Fullname</label>
+            </div>
+            <div class="row form-floating">
+                <input class="form-control" type="text" name = "username" id="username" placeholder="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="row form-floating">
+                    <input class="form-control" type="password" name = "password" id="password" placeholder="password" required>
+                    <label for="password">Password</label>
+            </div>
+            <div class="row form-floating">
+                <input class="form-control" type="email" name = "email" id="email" placeholder="email" required>
+                <label for="email">Mail Address</label>
+            </div>
+            <div class="row" id="loginError" role="alert">
+                <% if(errorMsg){ %>
+                    <%=errorMsg  %>
+                <% } %>
+            </div>
+            <div class="row">
+                <button class="btn btn-success" id="submit">Add Profile</button>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <form action="/login" method="get" id="homeForm">
+            <div class="row">
+                <button class="btn btn-primary" id="home">Back to Login Page</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

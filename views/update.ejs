@@ -1,0 +1,72 @@
+<%- include('partials/head')  %> 
+<div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-primary table-striped table-hover" id="myproducts">
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Available Stock</th>
+                        <th>Category</th>
+                    </tr>
+                    <% for(let item of products){ %>
+                        <tr>
+                            <td><%= item._id%></td>
+                            <td><%= item.name%></td>
+                            <td><%= item.price%></td>
+                            <td><%= item.countInStock%></td>
+                            <td><%= item.category%></td>
+                        </tr>
+                    <% } %>
+                </table>
+            </div>
+            <div class="col">
+                <form class="form-elements" action="/home/myproducts/update" method="post" id="modifyItemsForm">
+                    <div class="row form-floating">
+                            <select class="form-select form-select-sm" name="id" id="id" required>
+                                <option value="">Select Product</option>
+                                <% for(let item of products){ %>
+                                    <option value="<%= item._id %> "><%= item.name  %> </option>
+                                <% } %> 
+                            </select>
+                    </div>
+                    <div class="row form-floating">
+                        <input class="form-control" type="number" name = "price" id="price" placeholder="price" required>
+                        <label for="price">Product Price</label>
+                    </div>
+                    <div class="row form-floating">
+                            <input class="form-control" type="number" name = "countInStock" id="countInStock" placeholder="stock" required>
+                            <label for="stock">Stock</label>
+                    </div>
+                    <div class="row" id="modifyMessage"></div>
+                    <div class="row">
+                        <button class="btn btn-success" id="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col">
+                <form class="form-elements" action="/home/myproducts/delete" method="post" id="deleteItemsForm">
+                    <div class="row form-floating">
+                        <select class="form-select form-select-sm" name="id" id="id" required>
+                            <option value="">Select Item ID</option>
+                            <% for(let item of products){ %>
+                                <option value="<%= item._id  %> "><%= item.name  %> </option>
+                            <% } %> 
+                        </select>
+                    </div>
+                    <div class="row" id="deleteMessage"></div>
+                    <div class="row">
+                        <button class="btn btn-danger" id="delete">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+            <form action="/home" method="get" id="homeForm">
+                <div class="row">
+                    <button class="btn btn-primary" id="home">Back to Home</button>
+                </div>
+            </form>
+</div>
+</body>
+</html> 
